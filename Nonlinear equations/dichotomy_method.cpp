@@ -1,10 +1,10 @@
 #include <iostream>
 #include <cmath>
 
-#define MAX_N 50 // для случая, если вдруг алгоритм зациклится
+#define MAX_N 100 // для случая, если вдруг алгоритм зациклится
 
 double f(double x){
-    return (x-1) * pow((x-2), 2) * pow((x-3), 3);
+    return (x-1) * (x-10) * (x-20);
 }
 
 
@@ -16,11 +16,15 @@ double dichotomy_method(double a, double b, double eps){
     double c;
     int N = 0;
 
-    while(fabs(a - b) > eps || N < MAX_N){
+    while(fabs(a - b) > eps && N < MAX_N){
+
+        std::cout <<"N = "  << N << " " << "C = " << c << std::endl;
 
         c = (a + b) / 2;
 
         f(a) * f(c) < 0 ? b = c : a = c;
+
+        N++;
     
     }
 
