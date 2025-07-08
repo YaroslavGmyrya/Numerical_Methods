@@ -103,17 +103,20 @@ double first_derivative(std::function<double(double)> f, double x, double h = 1e
     return (f(x + h) - f(x - h)) / (2 * h); 
 }
 
-double chord_method(std::function<double(double)> f, double a, double b, double eps) {
+double second_derivative(std::function<double(double)> f, double x, double h = 1e-5) {
+    return (f(x + h) - 2 * f(x) + f(x - h)) / (h * h);
+}
 
-    if (f(a) * f(b) >= 0) {
-        return NAN;
-    }
-
+double newton_method(std::function<double(double)> f, double a, double b, double eps) {
     double x0, x_next, iter = 0;
     
     x0 = a;
 
-    do {
+    if (f(x0) * second_derivative(f, x0) <= 0) {
+        x0 = b;
+    }
+
+   do {
         x_next = x0 - f(x0) / first_derivative(f, x0);
         
         if (x_next < a || x_next > b) {
@@ -126,13 +129,12 @@ double chord_method(std::function<double(double)> f, double a, double b, double 
         
         x0 = x_next;
         iter++;
-        
-    } while (iter < MAX_ITER);
 
+    } while (iter < MAX_ITER);
+    
     iterations = iter;
 
     return x_next;
-
 }
 
 int main() {
@@ -222,7 +224,7 @@ int main() {
     double result;
 
     for(int i = 0; i < func_collection.size(); ++i){
-        result = chord_method(func_collection[i],left_limit[i], right_limit[i], eps);
+        result = newton_method(func_collection[i],left_limit[i], right_limit[i], eps);
         if(!std::isnan(result))
             std::cout << "Result f" << i << ": " << result << " iterations: "<< iterations << std::endl;
     }
