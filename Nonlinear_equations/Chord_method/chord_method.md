@@ -53,3 +53,6 @@ $$x = \frac{-f(a)(b-a)}{f(b)-f(a)} + a$$
 
 ![](https://cf4.ppt-online.org/files4/slide/0/0qmnseayfBhuNLYCSZUE8V6F31gWpvHwc29XPl/slide-3.jpg)
 
+**Сходимость и условия применения**
+
+![](https://i.postimg.cc/GhhJn80J/image.png)
