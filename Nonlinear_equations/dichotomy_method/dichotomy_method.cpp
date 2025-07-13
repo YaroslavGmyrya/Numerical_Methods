@@ -1,4 +1,4 @@
-#include "../tests/header.hpp"
+#include "../includes/header.hpp"
 
 double dichotomy_method(std::function<double(double)> f, double a, double b, double eps){
 

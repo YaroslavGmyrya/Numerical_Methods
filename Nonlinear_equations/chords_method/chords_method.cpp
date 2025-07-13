@@ -1,4 +1,4 @@
-#include "../tests/header.hpp"
+#include "../includes/header.hpp"
 
 double chord_method(std::function<double(double)> f, double a, double b, double eps) {
     if (f(a) * f(b) >= 0) 

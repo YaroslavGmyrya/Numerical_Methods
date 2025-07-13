@@ -1,4 +1,4 @@
-#include "../tests/header.hpp"
+#include "../includes/header.hpp"
 
 double newton_method(std::function<double(double)> f, double a, double b, double eps) {
     double x0, x_next, iter = 0;

@@ -1,4 +1,4 @@
-#include "header.hpp"
+#include "includes/header.hpp"
 
 double iterations;
 
@@ -9,7 +9,7 @@ int main(int argc, char* argv[]){
     std::vector<std::function<double(std::function<double(double)>, double, double, double)>> func_collection = 
     {dichotomy_method, chord_method, newton_method};
 
-    std::vector<std::string> func_names = {"Dichotomy method", "Chords method", "Newton_method"};
+    std::vector<std::string> func_names = {"Dichotomy method", "Chords method", "Newton method"};
 
     switch(argc){
 
