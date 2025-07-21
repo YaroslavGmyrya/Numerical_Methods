@@ -20,13 +20,15 @@ void test_uniform_step(
 
   int func_num = 1;
 
-  for (const auto &[test_function, range] : func_range) {
+  for (auto &[test_function, range] : func_range) {
 
     std::cout << "===== Function f" << func_num++ << " =====\n";
 
     points.clear();
     original_value.clear();
     interpolation_value.clear();
+
+    range.second *= multiplier;
 
     h = compute_uniform_step(range);
 
@@ -49,12 +51,15 @@ void test_uniform_step(
 
     show_vector(poly_coeff);
 
+    std::cout << "Arguments: ";
+
     for (double i = range.first; i < range.second; i += 0.1) {
+      std::cout << i << " ";
       original_value.push_back(test_function(i));
       interpolation_value.push_back(compute_function(i, poly_coeff, points));
     }
 
-    std::cout << "Original value: ";
+    std::cout << "\nOriginal value: ";
 
     show_vector(original_value);
 

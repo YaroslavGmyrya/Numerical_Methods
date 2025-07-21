@@ -7,6 +7,7 @@
 #include <vector>
 
 #define N 10
+#define multiplier 20
 
 double f1(double x);
 double f2(double x);
