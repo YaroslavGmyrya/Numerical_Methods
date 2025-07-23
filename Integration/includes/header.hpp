@@ -44,6 +44,9 @@ double central_rect(std::function<double(double)> f, double a, double b,
 double right_rect(std::function<double(double)> f, double a, double b,
                   double n);
 
+double trapeze_method(std::function<double(double)> f, double a, double b,
+                      double n);
+
 double Runge_rule(
     std::function<double(std::function<double(double)>, double, double, double)>
         method_type,
@@ -58,6 +61,10 @@ void central_rect_test(
     double EPS);
 
 void right_rect_test(
+    std::map<double (*)(double), std::pair<double, double>> func_and_range,
+    double EPS);
+
+void trapeze_test(
     std::map<double (*)(double), std::pair<double, double>> func_and_range,
     double EPS);
 

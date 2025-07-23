@@ -2,9 +2,9 @@ MAKEFLAGS += --no-print-directory
 
 GXX = g++
 
-INPUT_FILES_CPP = *.cpp ../tests/*.cpp ../general_funcs/*.cpp
-OUTPUT_FILE_BIN = main_rect.out
-OUTPUT_TEST_FILE = rect_test_result.txt
+INPUT_FILES_CPP = *.cpp ../tests/trapeze_test.cpp ../general_funcs/*.cpp
+OUTPUT_FILE_BIN = main_trapeze.out
+OUTPUT_TEST_FILE = trapeze_test_result.txt
 
 .PHONY: all run test clean
 

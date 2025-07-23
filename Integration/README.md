@@ -52,3 +52,9 @@ $$\frac{dx}{\ln x}$$
 [![image.png](https://i.postimg.cc/FKDJ9NH0/image.png)](https://postimg.cc/8FfC48WC)
 
 [![image.png](https://i.postimg.cc/zfSFKsXf/image.png)](https://postimg.cc/2qyWfXWp)
+
+Вычислять погрешность для таких методов не очень удобно, а нам бы хотелось производить вычисления с определенной точностью. Правило Рунге решает эту проблему:
+
+[![image.png](https://i.postimg.cc/8zj42mLH/image.png)](https://postimg.cc/Bjf2DDYL)
+
+Здесь k - порядок сходимости метода.
