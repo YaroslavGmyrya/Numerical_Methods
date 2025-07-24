@@ -36,16 +36,17 @@ double f26(double x);
 double f27(double x);
 double f28(double x);
 
-double left_rect(std::function<double(double)> f, double a, double b, double n);
+double left_rect(std::function<double(double)> f, double a, double b, int n);
 
-double central_rect(std::function<double(double)> f, double a, double b,
-                    double n);
+double central_rect(std::function<double(double)> f, double a, double b, int n);
 
-double right_rect(std::function<double(double)> f, double a, double b,
-                  double n);
+double right_rect(std::function<double(double)> f, double a, double b, int n);
 
 double trapeze_method(std::function<double(double)> f, double a, double b,
-                      double n);
+                      int n);
+
+double simpson_method(std::function<double(double)> f, double a, double b,
+                      int n);
 
 double Runge_rule(
     std::function<double(std::function<double(double)>, double, double, double)>
@@ -65,6 +66,10 @@ void right_rect_test(
     double EPS);
 
 void trapeze_test(
+    std::map<double (*)(double), std::pair<double, double>> func_and_range,
+    double EPS);
+
+void simpson_test(
     std::map<double (*)(double), std::pair<double, double>> func_and_range,
     double EPS);
 

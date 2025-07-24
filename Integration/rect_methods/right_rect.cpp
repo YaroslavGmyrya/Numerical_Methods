@@ -1,7 +1,6 @@
 #include <functional>
 
-double right_rect(std::function<double(double)> f, double a, double b,
-                  double n) {
+double right_rect(std::function<double(double)> f, double a, double b, int n) {
 
   double h = (b - a) / n;
 

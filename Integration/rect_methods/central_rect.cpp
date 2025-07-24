@@ -1,7 +1,7 @@
 #include <functional>
 
 double central_rect(std::function<double(double)> f, double a, double b,
-                    double n) {
+                    int n) {
 
   double h = (b - a) / n;
 

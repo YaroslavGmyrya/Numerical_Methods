@@ -2,9 +2,9 @@ MAKEFLAGS += --no-print-directory
 
 GXX = g++
 
-INPUT_FILES_CPP = *.cpp ../tests/*rect_test.cpp ../general_funcs/*.cpp
-OUTPUT_FILE_BIN = main_rect.out
-OUTPUT_TEST_FILE = rect_test_result.txt
+INPUT_FILES_CPP = *.cpp ../tests/simpson_test.cpp ../general_funcs/*.cpp
+OUTPUT_FILE_BIN = main_simpson.out
+OUTPUT_TEST_FILE = simpson_test_result.txt
 
 .PHONY: all run test clean
 
@@ -22,7 +22,6 @@ clean:
 	@rm -rf *.out && \
 	cd ../tests && \
 	rm -rf $(OUTPUT_TEST_FILE)
-
 
 graph:
 	@cd tests && \

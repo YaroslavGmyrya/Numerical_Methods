@@ -13,15 +13,15 @@ all:
 	printf "\n ===== Compilation completed successfully ===== \n\n"
 
 run:
-	./$(OUTPUT_FILE_BIN) ${EPS}
+	@./$(OUTPUT_FILE_BIN) ${EPS}
 
 test:
-	@cd tests && \
-	./$(OUTPUT_FILE_BIN) ${EPS} > $(OUTPUT_TEST_FILE)
+	@./$(OUTPUT_FILE_BIN) ${EPS} > ../tests/$(OUTPUT_TEST_FILE)
 
 clean:
-	@cd tests && \
-	rm -rf *.out
+	@rm -rf *.out && \
+	cd ../tests && \
+	rm -rf $(OUTPUT_TEST_FILE)
 
 graph:
 	@cd tests && \
