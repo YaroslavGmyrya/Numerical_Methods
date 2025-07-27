@@ -35,6 +35,8 @@ double f25(double x);
 double f26(double x);
 double f27(double x);
 double f28(double x);
+double f29(double x);
+double f30(double x);
 
 double left_rect(std::function<double(double)> f, double a, double b, int n);
 
@@ -51,26 +53,34 @@ double simpson_method(std::function<double(double)> f, double a, double b,
 double Runge_rule(
     std::function<double(std::function<double(double)>, double, double, double)>
         method_type,
-    std::function<double(double)> f, double a, double b, double epsilon);
+    std::function<double(double)> f, double a, double b, double epsilon,
+    int order);
 
 void left_rect_test(
-    std::map<double (*)(double), std::pair<double, double>> func_and_range,
+    std::map<double (*)(double), std::pair<double, std::pair<double, double>>>
+        func_and_range,
     double EPS);
 
 void central_rect_test(
-    std::map<double (*)(double), std::pair<double, double>> func_and_range,
+    std::map<double (*)(double), std::pair<double, std::pair<double, double>>>
+        func_and_range,
     double EPS);
 
 void right_rect_test(
-    std::map<double (*)(double), std::pair<double, double>> func_and_range,
+    std::map<double (*)(double), std::pair<double, std::pair<double, double>>>
+        func_and_range,
     double EPS);
 
 void trapeze_test(
-    std::map<double (*)(double), std::pair<double, double>> func_and_range,
+    std::map<double (*)(double), std::pair<double, std::pair<double, double>>>
+        func_and_range,
     double EPS);
 
 void simpson_test(
-    std::map<double (*)(double), std::pair<double, double>> func_and_range,
+    std::map<double (*)(double), std::pair<double, std::pair<double, double>>>
+        func_and_range,
     double EPS);
 
-extern std::map<double (*)(double), std::pair<double, double>> func_and_range;
+extern std::map<double (*)(double),
+                std::pair<double, std::pair<double, double>>>
+    func_and_range;

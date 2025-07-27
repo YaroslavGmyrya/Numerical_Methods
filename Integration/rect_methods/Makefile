@@ -19,11 +19,4 @@ test:
 	@./$(OUTPUT_FILE_BIN) ${EPS} > ../tests/$(OUTPUT_TEST_FILE)
 
 clean:
-	@rm -rf *.out && \
-	cd ../tests && \
-	rm -rf $(OUTPUT_TEST_FILE)
-
-
-graph:
-	@cd tests && \
-	python3 graph.py $(OUTPUT_TEST_FILE)
+	@rm -rf *.out
