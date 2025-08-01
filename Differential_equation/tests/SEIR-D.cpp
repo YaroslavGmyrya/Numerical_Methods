@@ -6,7 +6,7 @@ int main() {
 
   double E0 = 100;
   double R0 = 0;
-  double I0 = 0;
+  double I0 = 20;
   double D0 = 0;
   double S0 = N - E0 - R0 - I0 - D0;
 
